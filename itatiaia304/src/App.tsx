@@ -94,11 +94,11 @@ const App = () => {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
-            Drinks autorais.<br/>
-            <span className="text-bar-gold italic">Experiências únicas.</span>
+            Comida de verdade.<br/>
+            <span className="text-bar-gold italic">Cerveja gelada.</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
-            O ponto de encontro perfeito para quem busca sofisticação, bons momentos e uma atmosfera inesquecível.
+            O ponto de encontro perfeito para quem não abre mão de pratos caprichados, porções generosas e boas conversas em um ambiente acolhedor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* APLICADO NO BOTÃO VER CARDÁPIO TAMBÉM */}
@@ -126,13 +126,13 @@ const App = () => {
               />
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">Nossa Essência</h2>
-              <h3 className="text-4xl font-serif text-bar-black mb-6">Aconchego em cada detalhe</h3>
+              <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">Nossa História</h2>
+              <h3 className="text-4xl font-serif text-bar-black mb-6">A alma da Lagoinha</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Nascido do desejo de unir a elegância da alta coquetelaria com o calor de um ambiente acolhedor, o Itatiaia 304 é o seu novo refúgio. 
+                Fundado em 2024, o Itatiaia 304 nasceu do desejo de celebrar a essência de um dos bairros mais emblemáticos de Belo Horizonte. Estamos de portas abertas na Lagoinha, um verdadeiro berço de história, cultura e muita diversão.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Nossas mesas de madeira rústica e iluminação quente em tons de mel criam o cenário perfeito para conversas que entram pela noite. Aqui, o sofisticado é acessível.
+                Nossas mesas de madeira rústica e iluminação quente criam o cenário ideal para saborear pratos caprichados e tomar aquela cerveja trincando. Aqui, unimos a boemia tradicional do bairro com um ambiente acolhedor, onde o sofisticado é acessível.
               </p>
               <a href="#ambiente" className="group inline-flex items-center text-bar-wood font-semibold hover:text-bar-orange transition" onClick={(e) => scrollToSection(e, 'ambiente')}>
                 Conheça o espaço <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition" />
@@ -146,7 +146,7 @@ const App = () => {
       <section id="menu" className="py-24 bg-stone-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">Gastronomia & Coquetelaria</h2>
+            <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">Sabor & Tradição</h2>
             <h3 className="text-4xl font-serif text-bar-black">Nosso Cardápio</h3>
           </div>
 
@@ -286,7 +286,7 @@ const App = () => {
       </section>
 
       {/* 5. GALERIA / AMBIENTE (Grid estilo Instagram) */}
-      <section id="ambiente" className="py-2 bg-bar-black">
+      <section id="ambiente" className="py-2 bg-bar-black">     
          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             <img src="https://i.pinimg.com/736x/12/cc/2e/12cc2e2ccf8250bb35c1081adaee5521.jpg" alt="Detalhe Bar" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
             <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=600&auto=format&fit=crop" alt="Drinks" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
@@ -304,7 +304,7 @@ const App = () => {
             <div>
               <h4 className="text-2xl font-serif text-bar-gold mb-6">Itatiaia 304</h4>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Seu refúgio de sofisticação e bons drinks. A combinação perfeita entre o clássico e o autoral.
+                O verdadeiro sabor da Lagoinha. Comida de qualidade, cerveja sempre trincando e aquele ambiente acolhedor para reunir os amigos.
               </p>
               <div className="flex space-x-4">
                 <a href="https://www.instagram.com/itatiaia304/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-bar-gold hover:bg-bar-orange hover:text-white transition">
