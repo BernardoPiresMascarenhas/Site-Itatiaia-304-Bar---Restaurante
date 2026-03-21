@@ -161,7 +161,7 @@ const App = () => {
                 {/* Item Prato 1 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group">
                   <div className="h-48 overflow-hidden">
-                    <img src="/public/pratos/feijoada.jpg" alt="Prato Executivo" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <img src="/pratos/feijoada.jpg" alt="Prato Executivo" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5">
                     <div className="flex justify-between items-center mb-2">
@@ -175,7 +175,7 @@ const App = () => {
                 {/* Item Prato 2 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group">
                   <div className="h-48 overflow-hidden">
-                    <img src="/public/pratos/bife.jpg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <img src="/pratos/bife.jpg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5">
                     <div className="flex justify-between items-center mb-2">
@@ -197,7 +197,7 @@ const App = () => {
                 {/* Item Porção 1 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group">
                   <div className="h-48 overflow-hidden">
-                    <img src="/public/pratos/fritas.jpg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <img src="/pratos/fritas.jpg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5">
                     <div className="flex justify-between items-center mb-2">
@@ -211,7 +211,7 @@ const App = () => {
                 {/* Item Porção 2 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group">
                   <div className="h-48 overflow-hidden">
-                    <img src="/public/pratos/bolinhos.jpg" alt="Tábua de Frios" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <img src="/pratos/bolinhos.jpg" alt="Tábua de Frios" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5">
                     <div className="flex justify-between items-center mb-2">
@@ -288,7 +288,7 @@ const App = () => {
       {/* 5. GALERIA / AMBIENTE (Grid estilo Instagram) */}
       <section id="ambiente" className="py-2 bg-bar-black">
          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            <img src="https://images.unsplash.com/photo-1470337458703-415120a41789?q=80&w=600&auto=format&fit=crop" alt="Detalhe Bar" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
+            <img src="https://i.pinimg.com/736x/12/cc/2e/12cc2e2ccf8250bb35c1081adaee5521.jpg" alt="Detalhe Bar" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
             <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=600&auto=format&fit=crop" alt="Drinks" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
             <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop" alt="Mesas de Madeira" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
             <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=600&auto=format&fit=crop" alt="Luzes Quentes" className="w-full h-64 object-cover hover:opacity-80 transition cursor-pointer" />
