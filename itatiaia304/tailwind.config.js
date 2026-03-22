@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['"Playfair Display"', 'serif'],
+      },
       colors: {
         bar: {
           black: '#0a0a0a',
