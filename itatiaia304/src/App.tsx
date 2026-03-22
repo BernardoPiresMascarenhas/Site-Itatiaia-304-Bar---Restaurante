@@ -610,16 +610,19 @@ const App = () => {
               </div>
             </div>
 
-            {/* CTA Final (Coluna 3) */}
-            <div className="flex flex-col items-start lg:items-end justify-center">
-              <h5 className="text-white font-serif text-xl mb-4">Garanta sua mesa</h5>
+            {/* CTA Final */}
+            <div className="flex flex-col items-start lg:items-end justify-center w-full">
+              <h5 className="text-bar-gold font-serif text-2xl mb-2">Delivery & Retirada</h5>
+              <p className="text-gray-400 text-sm mb-6 text-left lg:text-right">
+                Bateu a fome? Peça direto com a nossa equipe para entrega na região ou retirada no balcão.
+              </p>
               <a 
                 href={`https://wa.me/${whatsappNumber}`}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-bar-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition w-full text-center shadow-lg shadow-orange-500/20"
+                className="bg-bar-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition w-full text-center shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
               >
-                Falar no WhatsApp
+                Pedir pelo WhatsApp
               </a>
             </div>
           </div>
