@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MapPin, Clock, Instagram, Menu, X, ChevronRight, Phone, Quote, Star, Ticket } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MapPin, Clock, Instagram, Menu, X, ChevronRight, ChevronLeft, Phone, Quote, Star, Ticket } from 'lucide-react';
 import { motion, animate } from "framer-motion";
 
 const App = () => {
@@ -26,6 +26,32 @@ const App = () => {
     { name: "Mateus Silveira", relation: "Cliente Fiel", text: "Lugar agradável." },
     { name: "Marcelo Mascarenhas", relation: "Cliente Fiel", text: "Excelente." }
   ];
+
+  const fotosAmbiente = [
+    "/local/local1.jpeg",
+    "/local/local3.jpeg",
+    "/local/local5.jpeg",
+    "/local/local2.jpeg",
+    "/local/local4.jpeg",
+    "/local/local6.jpeg",
+    "/local/local7.jpeg",
+    "/local/local8.jpeg",
+  ];
+
+  // Referência para o container do carrossel
+  const carrosselAmbienteRef = useRef<HTMLDivElement>(null);
+
+  // Função para rolar o carrossel quando clicar nas setas
+  const rolarCarrossel = (direcao: 'esquerda' | 'direita') => {
+    if (carrosselAmbienteRef.current) {
+      // Define o tamanho do "pulo" (rola mais no PC e menos no celular)
+      const tamanhoPulo = window.innerWidth > 768 ? 400 : 300; 
+      carrosselAmbienteRef.current.scrollBy({
+        left: direcao === 'esquerda' ? -tamanhoPulo : tamanhoPulo,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   // Efeito para a Navbar
   useEffect(() => {
@@ -100,6 +126,7 @@ const App = () => {
               <a href="#sobre" onClick={(e) => scrollToSection(e, 'sobre')} className="text-white hover:text-bar-gold transition">Sobre</a>
               <a href="#menu" onClick={(e) => scrollToSection(e, 'menu')} className="text-white hover:text-bar-gold transition">Cardápio</a>
               <a href="#ambiente" onClick={(e) => scrollToSection(e, 'ambiente')} className="text-white hover:text-bar-gold transition">Ambiente</a>
+              <a href="#instagram" onClick={(e) => scrollToSection(e, 'instagram')} className="text-white hover:text-bar-gold transition">Feed</a>
               <a href="#contato" onClick={(e) => scrollToSection(e, 'contato')} className="text-white hover:text-bar-gold transition">Contato</a>
               <a 
                 href={`https://www.ifood.com.br/delivery/belo-horizonte-mg/itatiaia-304-bonfim/af20a8e8-5791-45e5-bc50-7a12732ac233?utm_medium=share`}
@@ -123,6 +150,7 @@ const App = () => {
               <a href="#sobre" onClick={(e) => handleMobileClick(e, 'sobre')} className="text-white text-lg hover:text-bar-gold">Sobre</a>
               <a href="#menu" onClick={(e) => handleMobileClick(e, 'menu')} className="text-white text-lg hover:text-bar-gold">Cardápio</a>
               <a href="#ambiente" onClick={(e) => handleMobileClick(e, 'ambiente')} className="text-white text-lg hover:text-bar-gold">Ambiente</a>
+              <a href="#instagram" onClick={(e) => handleMobileClick(e, 'instagram')} className="text-white text-lg hover:text-bar-gold">Feed</a>
               <a href="#contato" onClick={(e) => handleMobileClick(e, 'contato')} className="text-white text-lg hover:text-bar-gold">Contato</a>
             </div>
           )}
@@ -134,7 +162,7 @@ const App = () => {
         {/* ... (código da imagem de fundo igual) ... */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format&fit=crop" 
+            src="local/local8.jpeg" 
             alt="Interior do Bar" 
             className="w-full h-full object-cover"
           />
@@ -164,17 +192,30 @@ const App = () => {
       
 
       {/* 3. SOBRE O BAR */}
-      <section id="sobre" className="py-24 bg-bar-white">
+      <section id="sobre" className="py-24 bg-bar-white overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="w-full md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1543007631-283050bb3e8c?q=80&w=1000&auto=format&fit=crop" 
-                alt="Ambiente Aconchegante" 
-                className="rounded-lg shadow-2xl object-cover h-[500px] w-full"
-              />
+          
+          {/* Adicionei 'justify-center' e tirei a obrigatoriedade de ocupar a tela toda com 'max-w-5xl' */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl mx-auto">
+            
+            {/* Bloco da Esquerda: VÍDEO (Agora ele ocupa APENAS o tamanho real dele, sem sobrar espaço invisível) */}
+            <div className="w-full md:w-auto flex justify-center">
+              <div className="overflow-hidden rounded-xl shadow-2xl bg-bar-black/5">
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-[400px] md:h-[600px] md:w-auto object-cover"
+                >
+                  <source src="/local/video1.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
+              </div>
             </div>
-            <div className="w-full md:w-1/2">
+
+            {/* Bloco da Direita: TEXTOS (Ocupa o resto do espaço e fica colado no vídeo) */}
+            <div className="w-full md:flex-1 max-w-xl md:pl-4">
               <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">Nossa História</h2>
               <h3 className="text-4xl font-serif text-bar-black mb-6">A alma da Lagoinha</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -187,6 +228,84 @@ const App = () => {
                 Conheça o espaço <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition" />
               </a>
             </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* 5. GALERIA / AMBIENTE (Carrossel Interativo) */}
+      <section id="ambiente" className="py-24 bg-bar-black border-t border-gray-900 relative">
+        <div className="container mx-auto px-6 mb-12">
+          
+          {/* Cabeçalho da Seção com Setas no PC */}
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="text-center md:text-left w-full md:w-auto">
+              <h2 className="text-bar-gold text-sm font-bold tracking-[0.2em] uppercase mb-3 flex items-center justify-center md:justify-start gap-4">
+                <span className="w-12 h-px bg-bar-gold/50"></span>
+                Nosso Espaço
+              </h2>
+              <h3 className="text-4xl font-serif text-white">Sinta o clima da Lagoinha</h3>
+            </div>
+            
+            {/* Setas Douradas (Visíveis apenas no PC, alinhadas à direita) */}
+            <div className="hidden md:flex gap-4">
+              <button 
+                onClick={() => rolarCarrossel('esquerda')} 
+                className="p-3 rounded-full border border-bar-gold/30 text-bar-gold hover:bg-bar-gold hover:text-bar-black transition duration-300"
+                aria-label="Foto anterior"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => rolarCarrossel('direita')} 
+                className="p-3 rounded-full border border-bar-gold/30 text-bar-gold hover:bg-bar-gold hover:text-bar-black transition duration-300"
+                aria-label="Próxima foto"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Container do Carrossel */}
+        <div className="relative w-full">
+          {/* A lista rolável */}
+          <div 
+            ref={carrosselAmbienteRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-6 md:px-12 pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {fotosAmbiente.map((foto, index) => (
+              <div 
+                key={index} 
+                className="relative group overflow-hidden bg-bar-black flex-none w-[280px] md:w-[350px] aspect-[4/5] md:aspect-square snap-center rounded-xl cursor-grab active:cursor-grabbing"
+              >
+                {/* Imagem com efeito de zoom lento no hover */}
+                <img 
+                  src={foto} 
+                  alt={`Ambiente Itatiaia 304 - Foto ${index + 1}`} 
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700 ease-in-out" 
+                />
+                
+                {/* Moldura dourada elegante que aparece no hover */}
+                <div className="absolute inset-4 border-2 border-transparent group-hover:border-bar-gold/60 transition-all duration-500 z-10 scale-105 group-hover:scale-100 pointer-events-none rounded-lg"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Setas de Navegação (Visíveis apenas no Mobile, flutuando sobre as fotos) */}
+          <div className="md:hidden absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2 pointer-events-none">
+             <button 
+                onClick={() => rolarCarrossel('esquerda')} 
+                className="pointer-events-auto p-2 bg-black/60 backdrop-blur-sm rounded-full border border-bar-gold/30 text-bar-gold shadow-lg"
+             >
+                <ChevronLeft size={20} />
+              </button>
+              <button 
+                onClick={() => rolarCarrossel('direita')} 
+                className="pointer-events-auto p-2 bg-black/60 backdrop-blur-sm rounded-full border border-bar-gold/30 text-bar-gold shadow-lg"
+              >
+                <ChevronRight size={20} />
+              </button>
           </div>
         </div>
       </section>
@@ -368,7 +487,7 @@ const App = () => {
       </section>
 
       {/* 5. INSTAGRAM FEED */}
-      <section id="ambiente" className="py-20 bg-[#0d0d0d] border-t border-gray-900">
+      <section id="instagram" className="py-20 bg-[#0d0d0d] border-t border-gray-900">
         <div className="container mx-auto px-6 text-center">
           
           <motion.div
