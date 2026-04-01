@@ -38,6 +38,58 @@ const App = () => {
     "/local/local8.jpeg",
   ];
 
+  // Cardápio de Bebidas Estruturado
+  const cardapioBebidas = [
+    {
+      categoria: "Cervejas (600ml)",
+      itens: [
+        { nome: "Heineken", preco: "15,00" },
+        { nome: "Original", preco: "12,00" },
+        { nome: "Brahma", preco: "10,00" },
+        { nome: "Skol", preco: "8,00" },
+      ]
+    },
+    {
+      categoria: "Latão (473ml)",
+      itens: [
+        { nome: "Heineken", preco: "12,00" },
+        { nome: "Stela Pure Gold", preco: "11,00" },
+        { nome: "Original", preco: "10,00" },
+        { nome: "Amstel", preco: "10,00" },
+        { nome: "Brahma", preco: "8,00" },
+      ]
+    },
+    {
+      categoria: "Drinks & Outros",
+      itens: [
+        { nome: "Caipivodka", preco: "25,00" },
+        { nome: "Cuba Libre", preco: "20,00" },
+        { nome: "Caipirinha", preco: "15,00" },
+        { nome: "Xeque Mate (Lata 362ml)", preco: "14,00" },
+        { nome: "Smirnoff ICE (Lata 269ml)", preco: "12,00" },
+        { nome: "Beats (Garrafa 269ml)", preco: "12,00" },
+        { nome: "Beats (Lata 269ml)", preco: "12,00" },
+        { nome: "Red Bull (Lata 250ml)", preco: "12,00" },
+      ]
+    },
+    {
+      categoria: "Doses",
+      itens: [
+        { nome: "Campari", preco: "15,00" },
+        { nome: "Cavalo Branco", preco: "15,00" },
+        { nome: "Aperol", preco: "15,00" },
+        { nome: "Vodka", preco: "15,00" },
+        { nome: "Taça Vinho Branco Seco", preco: "15,00" },
+        { nome: "Bacardi", preco: "12,00" },
+        { nome: "Tequila", preco: "10,00" },
+        { nome: "Domecq", preco: "6,00" },
+        { nome: "Cachaça Seleta", preco: "6,00" },
+        { nome: "Cachaça da Roça", preco: "3,00" },
+        { nome: "Presidente", preco: "3,00" },
+      ]
+    }
+  ];
+
   // Referência para o container do carrossel
   const carrosselAmbienteRef = useRef<HTMLDivElement>(null);
 
@@ -84,7 +136,7 @@ const App = () => {
     scrollToSection(e, sectionId);
   };
 
-  const whatsappNumber = "5531996625970";
+  const whatsappNumber = "5531996505970";
 
   return (
 
@@ -129,7 +181,7 @@ const App = () => {
               <a href="#instagram" onClick={(e) => scrollToSection(e, 'instagram')} className="text-white hover:text-bar-gold transition">Feed</a>
               <a href="#contato" onClick={(e) => scrollToSection(e, 'contato')} className="text-white hover:text-bar-gold transition">Contato</a>
               <a 
-                href={`https://www.ifood.com.br/delivery/belo-horizonte-mg/itatiaia-304-bonfim/af20a8e8-5791-45e5-bc50-7a12732ac233?utm_medium=share`}
+                href={`https://wa.me/${whatsappNumber}`}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-bar-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-orange-500/30"
@@ -423,53 +475,37 @@ const App = () => {
 
           </div>
 
-          {/* LISTA DE BEBIDAS (SEM IMAGENS, SÓ VALORES) */}
-          <div className="max-w-4xl mx-auto">
-            <h4 className="text-2xl font-serif text-bar-gold mb-6 text-center">Cervejas & Bebidas</h4>
+          {/* LISTA DE BEBIDAS (Categorizada e Mapeada) */}
+          <div className="max-w-5xl mx-auto mt-16">
+            <h4 className="text-3xl font-serif text-bar-gold mb-10 text-center flex items-center justify-center gap-4">
+              <span className="w-8 h-px bg-bar-gold/50"></span>
+              Cervejas & Bebidas
+              <span className="w-8 h-px bg-bar-gold/50"></span>
+            </h4>
             
-            <div className="bg-bar-black p-8 md:p-12 rounded-xl shadow-lg border border-bar-gold/30">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-gray-300">
-                
-                {/* Coluna 1 Bebidas */}
-                <ul className="space-y-4">
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Chopp Artesanal (300ml)</span>
-                    <span className="text-bar-gold font-medium">R$ 12</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Cerveja Long Neck (Heineken)</span>
-                    <span className="text-bar-gold font-medium">R$ 14</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Caipirinha de Limão</span>
-                    <span className="text-bar-gold font-medium">R$ 22</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Moscow Mule</span>
-                    <span className="text-bar-gold font-medium">R$ 30</span>
-                  </li>
-                </ul>
+            {/* O Grid principal que divide as categorias */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              
+              {/* O map percorre cada categoria do nosso Array */}
+              {cardapioBebidas.map((bloco, index) => (
+                <div key={index} className="bg-bar-black p-6 md:p-8 rounded-xl shadow-lg border border-bar-gold/20">
+                  {/* Título da Categoria */}
+                  <h5 className="text-xl font-serif text-white mb-6 border-b border-bar-gold/30 pb-3">
+                    {bloco.categoria}
+                  </h5>
+                  
+                  {/* Lista de itens dentro da categoria */}
+                  <ul className="space-y-4">
+                    {bloco.itens.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex justify-between border-b border-gray-800/50 pb-2 hover:text-white text-gray-400 transition cursor-default">
+                        <span className="pr-4">{item.nome}</span>
+                        <span className="text-bar-gold font-medium whitespace-nowrap">R$ {item.preco}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
 
-                {/* Coluna 2 Bebidas */}
-                <ul className="space-y-4">
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Negroni</span>
-                    <span className="text-bar-gold font-medium">R$ 28</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Gin Tônica Clássica</span>
-                    <span className="text-bar-gold font-medium">R$ 32</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Refrigerante (Lata)</span>
-                    <span className="text-bar-gold font-medium">R$ 7</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-800 pb-2 hover:text-white transition cursor-default">
-                    <span>Água com/sem gás</span>
-                    <span className="text-bar-gold font-medium">R$ 5</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
           
@@ -736,12 +772,12 @@ const App = () => {
                 Bateu a fome? Peça direto com a nossa equipe para entrega na região ou retirada no balcão.
               </p>
               <a 
-                href={`https://wa.me/${whatsappNumber}`}
+                href={`https://www.ifood.com.br/delivery/belo-horizonte-mg/itatiaia-304-bonfim/af20a8e8-5791-45e5-bc50-7a12732ac233?utm_medium=share`}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-bar-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition w-full text-center shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
               >
-                Pedir pelo WhatsApp
+                Pedir pelo iFood
               </a>
             </div>
           </div>
