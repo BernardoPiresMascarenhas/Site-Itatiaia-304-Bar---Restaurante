@@ -7,6 +7,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPromo, setShowPromo] = useState(true);  //promoção ativa ou nn
   const [visibleCount, setVisibleCount] = useState(4);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const avaliacoes = [
     { name: "Gina Valéria", relation: "Cliente Fiel", text: "Comida saborosa, bem servida, acompanhada de uma salada que não se encontra em qualquer PF. Se a procura for por tira-gosto, esse é o lugar, com muita variedade e sabor. A cerveja sempre gelada." },
@@ -112,6 +113,14 @@ const App = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((erro) => {
+        console.log("Autoplay bloqueado pelo celular, mantendo o poster.");
+      });
+    }
   }, []);
 
   // FUNÇÃO DE SCROLL SUAVE QUE VOCÊ TROUXE
@@ -254,12 +263,13 @@ const App = () => {
             <div className="w-full md:w-auto flex justify-center">
               <div className="overflow-hidden rounded-xl shadow-2xl bg-bar-black/5">
                 <video 
+                  ref={videoRef}
                   autoPlay 
                   loop 
                   muted 
                   playsInline 
                   poster="/local/local1.jpeg"
-                  className="w-full h-[400px] md:h-[600px] md:w-auto object-cover"
+                  className="w-full h-full object-cover pointer-events-none"
                 >
                   <source src="/local/video1.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.
