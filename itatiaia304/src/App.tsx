@@ -5,7 +5,7 @@ import { motion, animate } from "framer-motion";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showPromo, setShowPromo] = useState(true);  //promoção ativa ou nn
+  const [showPromo, setShowPromo] = useState(false);  //promoção ativa ou nn
   const [visibleCount, setVisibleCount] = useState(4);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -185,9 +185,10 @@ const App = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-8 items-center">
               <a href="#sobre" onClick={(e) => scrollToSection(e, 'sobre')} className="text-white hover:text-bar-gold transition">Sobre</a>
-              <a href="#menu" onClick={(e) => scrollToSection(e, 'menu')} className="text-white hover:text-bar-gold transition">Cardápio</a>
               <a href="#ambiente" onClick={(e) => scrollToSection(e, 'ambiente')} className="text-white hover:text-bar-gold transition">Ambiente</a>
+              <a href="#menu" onClick={(e) => scrollToSection(e, 'menu')} className="text-white hover:text-bar-gold transition">Cardápio</a>
               <a href="#instagram" onClick={(e) => scrollToSection(e, 'instagram')} className="text-white hover:text-bar-gold transition">Feed</a>
+              <a href="#depoimentos" onClick={(e) => scrollToSection(e, 'depoimentos')} className="text-white hover:text-bar-gold transition">Avaliações</a>
               <a href="#contato" onClick={(e) => scrollToSection(e, 'contato')} className="text-white hover:text-bar-gold transition">Contato</a>
               <a 
                 href={`https://wa.me/${whatsappNumber}`}
@@ -209,9 +210,10 @@ const App = () => {
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 w-full bg-bar-black flex flex-col items-center py-6 gap-6 border-t border-gray-800 shadow-xl">
               <a href="#sobre" onClick={(e) => handleMobileClick(e, 'sobre')} className="text-white text-lg hover:text-bar-gold">Sobre</a>
-              <a href="#menu" onClick={(e) => handleMobileClick(e, 'menu')} className="text-white text-lg hover:text-bar-gold">Cardápio</a>
               <a href="#ambiente" onClick={(e) => handleMobileClick(e, 'ambiente')} className="text-white text-lg hover:text-bar-gold">Ambiente</a>
+              <a href="#menu" onClick={(e) => handleMobileClick(e, 'menu')} className="text-white text-lg hover:text-bar-gold">Cardápio</a>
               <a href="#instagram" onClick={(e) => handleMobileClick(e, 'instagram')} className="text-white text-lg hover:text-bar-gold">Feed</a>
+              <a href="#depoimentos" onClick={(e) => handleMobileClick(e, 'depoimentos')} className="text-white text-lg hover:text-bar-gold">Avaliações</a>
               <a href="#contato" onClick={(e) => handleMobileClick(e, 'contato')} className="text-white text-lg hover:text-bar-gold">Contato</a>
             </div>
           )}
@@ -259,9 +261,10 @@ const App = () => {
           {/* Adicionei 'justify-center' e tirei a obrigatoriedade de ocupar a tela toda com 'max-w-5xl' */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl mx-auto">
             
-            {/* Bloco da Esquerda: VÍDEO (Agora ele ocupa APENAS o tamanho real dele, sem sobrar espaço invisível) */}
-            <div className="w-full md:w-auto flex justify-center">
-              <div className="overflow-hidden rounded-xl shadow-2xl bg-bar-black/5">
+            {/* Bloco da Esquerda: VÍDEO */}
+            <div className="w-full md:w-1/2 flex justify-center">
+              {/* ADICIONAMOS: w-full, max-w-sm (limite de largura) e aspect-[3/4] (proporção) */}
+              <div className="w-full max-w-sm aspect-[3/4] overflow-hidden rounded-xl shadow-2xl bg-bar-black/5">
                 <video 
                   ref={videoRef}
                   autoPlay 
@@ -391,13 +394,13 @@ const App = () => {
                 
                 {/* Item Prato 1 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
                     <img src="/pratos/frango.jpeg" alt="Prato Executivo" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Frango com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 30</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 21</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Bife de frango grelhado com fritas crocantes, salada do Dia, arroz e feijão. Uma opção leve e deliciosa para o seu Dia.</p>
                   </div>
@@ -405,13 +408,13 @@ const App = () => {
 
                 {/* Item Prato 2 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
                     <img src="/pratos/boi.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Boi com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 32</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Delicioso bife de boi suculento acompanhado de fritas crocantes, salada do Dia, arroz e feijão. Uma combinação perfeita para um almoço saboroso e satisfatório.</p>
                   </div>
@@ -419,13 +422,13 @@ const App = () => {
 
                 {/* Item Prato 3 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
                     <img src="/pratos/porco.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Porco com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 30</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 22</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Bife de porco tenro e saboroso, servido com fritas douradas, salada do Dia, arroz e feijão. Uma refeição que agrada a todos os paladares.</p>
                   </div>
@@ -433,13 +436,13 @@ const App = () => {
 
                 {/* Item Prato 4 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
                     <img src="/pratos/feijoada.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Feijoada</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 38</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Tradicional feijoada brasileira, rica em sabores e acompanhada de couve, farofa, laranja, arroz e vinagrete. Uma experiência gastronômica completa.</p>
                   </div>
@@ -451,37 +454,35 @@ const App = () => {
             {/* PORÇÕES */}
             <div>
               <h4 className="text-2xl font-serif text-bar-wood mb-6 border-b-2 border-bar-gold/30 pb-2 inline-block">Porções</h4>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
                 {/* Item Porção 1 */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
-                    <img src="/pratos/fritas.jpg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/fritas.jpeg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 35</span>
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Fritas com Queijo e Bacon</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 30</span>
                     </div>
-                    <p className="text-sm text-gray-500 flex-grow">Batatas fritas com cebolinha.</p>
+                    <p className="text-sm text-gray-500 flex-grow">Batatas fritas crocantes, cobertas com queijo derretido e bacon suculento e saboroso.</p>
                   </div>
                 </div>
 
-                {/* Item Porção 2 */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="h-48 overflow-hidden flex-shrink-0">
-                    <img src="/pratos/bolinhos.jpg" alt="Tábua de Frios" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bolinhos</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 45</span>
-                    </div>
-                    <p className="text-sm text-gray-500 flex-grow">Porção de bolinhos recheados com carne.</p>
-                  </div>
-                </div>
+                
 
               </div>
+
+              {/* AVISO DE NOVIDADES EM BREVE - Adicionado aqui! */}
+              <div className="mt-8 bg-bar-black/5 border-2 border-dashed border-bar-gold/40 rounded-xl p-6 text-center flex items-center justify-center">
+                <p className="text-gray-600 font-medium italic">
+                  <span className="text-xl mr-2 text-bar-wood">👨‍🍳</span> 
+                  Nosso cardápio está crescendo! Novas opções de porções deliciosas serão adicionadas aqui em breve.
+                </p>
+              </div>
+              
             </div>
 
           </div>
