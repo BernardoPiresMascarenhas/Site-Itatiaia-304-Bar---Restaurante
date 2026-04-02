@@ -117,7 +117,7 @@ const App = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch((erro) => {
+      videoRef.current.play().catch(() => {
         console.log("Autoplay bloqueado pelo celular, mantendo o poster.");
       });
     }
