@@ -234,7 +234,7 @@ const App = () => {
             <a href="#menu" onClick={(e) => scrollToSection(e, 'menu')} className="bg-transparent border-2 border-bar-gold text-bar-gold hover:bg-bar-gold hover:text-bar-black px-8 py-4 rounded-full font-medium transition duration-300">
               Ver Cardápio
             </a>
-            <a href={`https://www.ifood.com.br/delivery/belo-horizonte-mg/itatiaia-304-bonfim/af20a8e8-5791-45e5-bc50-7a12732ac233?utm_medium=share`} target="_blank" rel="noreferrer" className="bg-bar-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-medium transition duration-300 shadow-lg shadow-orange-500/20">
+            <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="bg-bar-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-medium transition duration-300 shadow-lg shadow-orange-500/20">
               Realizar Pedido
             </a>
           </div>
