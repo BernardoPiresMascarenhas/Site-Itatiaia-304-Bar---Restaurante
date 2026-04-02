@@ -258,6 +258,7 @@ const App = () => {
                   loop 
                   muted 
                   playsInline 
+                  poster="/local/local1.jpeg"
                   className="w-full h-[400px] md:h-[600px] md:w-auto object-cover"
                 >
                   <source src="/local/video1.mp4" type="video/mp4" />
