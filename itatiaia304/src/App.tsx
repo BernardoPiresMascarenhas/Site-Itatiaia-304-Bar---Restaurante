@@ -523,7 +523,7 @@ const App = () => {
           
           <div className="text-center mt-16">
              <a 
-               href="/cardapio.pdf" 
+               href="/pratos/CardapioItatiaia304.pdf" 
                target="_blank" 
                rel="noopener noreferrer"
                className="inline-block bg-bar-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition font-medium shadow-lg hover:shadow-xl"
