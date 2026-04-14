@@ -486,6 +486,16 @@ const App = () => {
             </div>
 
           </div>
+          <div className="text-center mt-16">
+             <a 
+               href="/pratos/CardapioItatiaia304.pdf" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="inline-block bg-bar-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition font-medium shadow-lg hover:shadow-xl"
+             >
+               Ver Cardápio Completo em PDF
+             </a>
+          </div>
 
           {/* LISTA DE BEBIDAS (Categorizada e Mapeada) */}
           <div className="max-w-5xl mx-auto mt-16">
@@ -765,7 +775,7 @@ const App = () => {
                     <ul className="space-y-2">
                       <li className="flex flex-col">
                         <span className="text-bar-gold text-[10px] font-bold tracking-[0.1em] uppercase">Almoço</span>
-                        <span className="text-gray-400 text-sm">Seg a Sex • 11h às 15h</span>
+                        <span className="text-gray-400 text-sm">Seg a Sáb • 11h às 14h</span>
                       </li>
                       <li className="flex flex-col">
                         <span className="text-bar-gold text-[10px] font-bold tracking-[0.1em] uppercase">Bar</span>
