@@ -45,9 +45,10 @@ const App = () => {
       categoria: "Cervejas (600ml)",
       itens: [
         { nome: "Heineken", preco: "15,00" },
+        { nome: "Spaten", preco: "13,00" },
         { nome: "Original", preco: "12,00" },
         { nome: "Brahma", preco: "10,00" },
-        { nome: "Skol", preco: "8,00" },
+        { nome: "Skol", preco: "10,00" },
       ]
     },
     {
@@ -58,6 +59,7 @@ const App = () => {
         { nome: "Original", preco: "10,00" },
         { nome: "Amstel", preco: "10,00" },
         { nome: "Brahma", preco: "8,00" },
+        { nome: "Skol", preco: "8,00" },
       ]
     },
     {
@@ -386,70 +388,6 @@ const App = () => {
 
           {/* GRID DE PRATOS E PORÇÕES (COM IMAGENS) */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 max-w-7xl mx-auto mb-16">
-            
-            {/* PRATO DO DIA */}
-            <div>
-              <h4 className="text-2xl font-serif text-bar-wood mb-6 border-b-2 border-bar-gold/30 pb-2 inline-block">Prato do Dia</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
-                {/* Item Prato 1 */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
-                    <img src="/pratos/frango.jpeg" alt="Prato Executivo" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Frango com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 21</span>
-                    </div>
-                    <p className="text-sm text-gray-500 flex-grow">Bife de frango grelhado com fritas crocantes, salada do Dia, arroz e feijão. Uma opção leve e deliciosa para o seu Dia.</p>
-                  </div>
-                </div>
-
-                {/* Item Prato 2 */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
-                    <img src="/pratos/boi.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Boi com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
-                    </div>
-                    <p className="text-sm text-gray-500 flex-grow">Delicioso bife de boi suculento acompanhado de fritas crocantes, salada do Dia, arroz e feijão. Uma combinação perfeita para um almoço saboroso e satisfatório.</p>
-                  </div>
-                </div>
-
-                {/* Item Prato 3 */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
-                    <img src="/pratos/porco.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Porco com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 22</span>
-                    </div>
-                    <p className="text-sm text-gray-500 flex-grow">Bife de porco tenro e saboroso, servido com fritas douradas, salada do Dia, arroz e feijão. Uma refeição que agrada a todos os paladares.</p>
-                  </div>
-                </div>
-
-                {/* Item Prato 4 */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
-                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
-                    <img src="/pratos/feijoada.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h5 className="font-medium text-bar-black text-lg leading-tight">Feijoada</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
-                    </div>
-                    <p className="text-sm text-gray-500 flex-grow">Tradicional feijoada brasileira, rica em sabores e acompanhada de couve, farofa, laranja, arroz e vinagrete. Uma experiência gastronômica completa.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
 
             {/* PORÇÕES */}
             <div>
@@ -485,7 +423,87 @@ const App = () => {
               
             </div>
 
+            {/* PRATO DO DIA */}
+            <div>
+              {/* Cabeçalho com Título e Indicador de Scroll */}
+              <div className="flex items-end justify-between mb-6 px-4 sm:px-0 border-b-2 border-bar-gold/30 pb-2">
+                <h4 className="text-2xl font-serif text-bar-wood m-0 inline-block">
+                  Prato do Dia
+                </h4>
+                
+                {/* Indicador "Arraste" - Aparece só no Mobile (sm:hidden) com uma animação sutil */}
+                <div className="flex items-center gap-1 text-xs text-bar-gold sm:hidden animate-pulse font-medium">
+                  <span>Arraste</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Container Modificado: Adicionado 'items-stretch' para forçar a mesma altura na linha */}
+              <div className="flex sm:grid overflow-x-auto sm:overflow-visible items-stretch snap-x snap-mandatory sm:snap-none gap-6 sm:grid-cols-2 pb-8 sm:pb-0 px-4 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                
+                {/* Item Prato 1 */}
+                <div className="w-[300px] sm:w-auto flex-shrink-0 sm:flex-shrink snap-center bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/frango.jpeg" alt="Prato Executivo" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Frango com Fritas</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 21</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Bife de frango grelhado com fritas crocantes, salada do Dia, arroz e feijão. Uma opção leve e deliciosa para o seu Dia.</p>
+                  </div>
+                </div>
+
+                {/* Item Prato 2 */}
+                <div className="w-[300px] sm:w-auto flex-shrink-0 sm:flex-shrink snap-center bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/boi.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Boi com Fritas</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Delicioso bife de boi suculento acompanhado de fritas crocantes, salada do Dia, arroz e feijão. Uma combinação perfeita para um almoço saboroso e satisfatório.</p>
+                  </div>
+                </div>
+
+                {/* Item Prato 3 */}
+                <div className="w-[300px] sm:w-auto flex-shrink-0 sm:flex-shrink snap-center bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/porco.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Porco com Fritas</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 22</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Bife de porco tenro e saboroso, servido com fritas douradas, salada do Dia, arroz e feijão. Uma refeição que agrada a todos os paladares.</p>
+                  </div>
+                </div>
+
+                {/* Item Prato 4 */}
+                <div className="w-[300px] sm:w-auto flex-shrink-0 sm:flex-shrink snap-center bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/feijoada.jpeg" alt="Prato Especial" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Feijoada</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Tradicional feijoada brasileira, rica em sabores e acompanhada de couve, farofa, laranja, arroz e vinagrete. Uma experiência gastronômica completa.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
+          
+
           <div className="text-center mt-16">
              <a 
                href="/pratos/CardapioItatiaia304.pdf" 
