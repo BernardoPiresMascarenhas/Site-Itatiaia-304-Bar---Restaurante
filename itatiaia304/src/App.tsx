@@ -409,6 +409,48 @@ const App = () => {
                   </div>
                 </div>
 
+                {/* Item Porção 2 */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/bolinhocamarao.jpeg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Bolinho de Camarão</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 25</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">10 unidades de bolinhos crocantes de camarão com recheio cremoso de cream cheese, perfeitos para petiscar.</p>
+                  </div>
+                </div>
+
+                {/* Item Porção 3 */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/fritasqueijo.jpeg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Fritas com Queijo</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 25</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Batatas fritas crocantes, cobertas com queijo derretido.</p>
+                  </div>
+                </div>
+
+                {/* Item Porção 4 */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                  <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img src="/pratos/espetinhomedalhaomucarela.jpeg" alt="Porção de Fritas" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h5 className="font-medium text-bar-black text-lg leading-tight">Espetinho de Medalão com Muçarela</h5>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 13</span>
+                    </div>
+                    <p className="text-sm text-gray-500 flex-grow">Espetinho suculento de medalhão de carne envolto com muçarela, grelhado no ponto certo e cheio de sabor.</p>
+                  </div>
+                </div>
+
                 
 
               </div>
@@ -451,7 +493,7 @@ const App = () => {
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Frango com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 21</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 22</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Bife de frango grelhado com fritas crocantes, salada do Dia, arroz e feijão. Uma opção leve e deliciosa para o seu Dia.</p>
                   </div>
@@ -465,7 +507,7 @@ const App = () => {
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Boi com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 24</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Delicioso bife de boi suculento acompanhado de fritas crocantes, salada do Dia, arroz e feijão. Uma combinação perfeita para um almoço saboroso e satisfatório.</p>
                   </div>
@@ -479,7 +521,7 @@ const App = () => {
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Bife Porco com Fritas</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 22</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Bife de porco tenro e saboroso, servido com fritas douradas, salada do Dia, arroz e feijão. Uma refeição que agrada a todos os paladares.</p>
                   </div>
