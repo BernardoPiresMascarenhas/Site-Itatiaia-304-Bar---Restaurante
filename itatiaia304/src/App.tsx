@@ -44,11 +44,11 @@ const App = () => {
     {
       categoria: "Cervejas (600ml)",
       itens: [
-        { nome: "Heineken", preco: "15,00" },
-        { nome: "Spaten", preco: "13,00" },
-        { nome: "Original", preco: "12,00" },
-        { nome: "Brahma", preco: "10,00" },
-        { nome: "Skol", preco: "10,00" },
+        { nome: "Heineken", preco: "16,00" },
+        { nome: "Spaten", preco: "14,00" },
+        { nome: "Original", preco: "13,00" },
+        { nome: "Brahma", preco: "11,00" },
+        { nome: "Skol", preco: "11,00" },
       ]
     },
     {
@@ -87,8 +87,8 @@ const App = () => {
         { nome: "Tequila", preco: "10,00" },
         { nome: "Domecq", preco: "6,00" },
         { nome: "Cachaça Seleta", preco: "6,00" },
+        { nome: "Presidente", preco: "5,00" },
         { nome: "Cachaça da Roça", preco: "3,00" },
-        { nome: "Presidente", preco: "3,00" },
       ]
     }
   ];
@@ -535,7 +535,7 @@ const App = () => {
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h5 className="font-medium text-bar-black text-lg leading-tight">Feijoada</h5>
-                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 23</span>
+                      <span className="text-bar-gold font-bold whitespace-nowrap">R$ 24</span>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow">Tradicional feijoada brasileira, rica em sabores e acompanhada de couve, farofa, laranja, arroz e vinagrete. Uma experiência gastronômica completa.</p>
                   </div>
