@@ -42,20 +42,35 @@ const App = () => {
   // Cardápio de Bebidas Estruturado
   const cardapioBebidas = [
     {
+      categoria: "Cervejas (600ml)",
+      itens: [
+        { nome: "Heineken", preco: "16,00" },
+        { nome: "Spaten", preco: "14,00" },
+        { nome: "Original", preco: "13,00" },
+        { nome: "Brahma", preco: "11,00" },
+        { nome: "Skol", preco: "11,00" },
+      ]
+    },
+    {
       categoria: "Latão (473ml)",
       itens: [
         { nome: "Heineken", preco: "12,00" },
         { nome: "Stela Pure Gold", preco: "11,00" },
         { nome: "Original", preco: "10,00" },
+        { nome: "Amstel", preco: "10,00" },
         { nome: "Brahma", preco: "8,00" },
+        { nome: "Skol", preco: "8,00" },
       ]
     },
     {
       categoria: "Drinks & Outros",
       itens: [
-        { nome: "Xeque Mate (Lata 473ml)", preco: "20,00" },
+        { nome: "Caipivodka", preco: "25,00" },
+        { nome: "Cuba Libre", preco: "20,00" },
+        { nome: "Caipirinha", preco: "15,00" },
         { nome: "Xeque Mate (Lata 362ml)", preco: "14,00" },
         { nome: "Smirnoff ICE (Lata 269ml)", preco: "12,00" },
+        { nome: "Beats (Garrafa 269ml)", preco: "12,00" },
         { nome: "Beats (Lata 269ml)", preco: "12,00" },
         { nome: "Red Bull (Lata 250ml)", preco: "12,00" },
       ]
@@ -67,8 +82,11 @@ const App = () => {
         { nome: "Cavalo Branco", preco: "15,00" },
         { nome: "Aperol", preco: "15,00" },
         { nome: "Vodka", preco: "15,00" },
+        { nome: "Taça Vinho Branco Seco", preco: "15,00" },
         { nome: "Bacardi", preco: "12,00" },
         { nome: "Tequila", preco: "10,00" },
+        { nome: "Domecq", preco: "6,00" },
+        { nome: "Cachaça Seleta", preco: "6,00" },
         { nome: "Presidente", preco: "5,00" },
         { nome: "Cachaça da Roça", preco: "3,00" },
       ]
